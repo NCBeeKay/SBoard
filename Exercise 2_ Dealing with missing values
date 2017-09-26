@@ -1,0 +1,45 @@
+0: Load the data in RStudio
+
+
+> titanic_clean <- read.csv("C:/Users/balaji/Documents/Springboard/Ch3_Exercise2/titanic_original.csv")
+
+
+1: Port of embarkation
+
+# Find the missing values and replace them with S
+# this finds missing values
+> titanic_clean[(is.na(titanic_clean$embarked) | titanic_clean$embarked==""), ]
+
+# Replace missing values with S
+>titanic_clean$embarked <- sub("^$", "S", titanic_clean$embarked)
+
+2: Age
+
+# Calculate the mean of the Age column and use that value to populate the missing values
+# this finds missing values
+> titanic_clean[(is.na(titanic_clean$age) | titanic_clean$age==""), ]
+
+> titanic_clean$age[is.na(titanic_clean$age)] = mean(titanic_clean$age, na.rm=TRUE)
+
+
+3: Lifeboat
+
+# Fill these empty slots with a dummy value e.g. the string 'None' or 'NA'
+# this finds missing values
+> titanic_clean[(is.na(titanic_clean$boat) | titanic_clean$boat==""), ]
+
+# Replace missing values with "None"
+> titanic_clean$boat <- sub("^$", "None", titanic_clean$boat)
+
+4: Cabin
+
+# Create a new column has_cabin_number which has 1 if there is a cabin number, and 0 otherwise.
+# this finds missing values
+> titanic_clean[(is.na(titanic_clean$cabin) | titanic_clean$cabin==""), ]
+
+# Create new column(binary) to indicate cabin number available or not
+> titanic_clean$has_cabin_number <- as.numeric(titanic_clean$cabin != "")
+
+
+Export dataframe to "titanic_clean.csv"
+> write.csv(titanic__clean, file = "titanic_clean.csv", row.names = FALSE)
