@@ -1,0 +1,39 @@
+---
+title: # "Capstone Project Proposal"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# **Capstone Project Proposal** 
+## **Title**: Otto Group Product Classification
+
+
+### •	Objective
+The objective of this project is to classify over 200,000 products into correct categories based on the 93 product features.
+
+
+### •	High level overview
+The Otto Group is one of the world’s biggest e-commerce companies, with subsidiaries in more than 20 countries, including Crate & Barrel (USA), Otto.de (Germany) and 3 Suisses (France). Otto Group sell millions of products worldwide every day, with several thousand products being added to our product line. 
+
+A consistent analysis of the performance of products is crucial for the success of the business. However, due to our diverse global infrastructure, many identical products get classified differently. Therefore, the quality of product analysis depends heavily on the ability to accurately cluster similar products. The better the classification, the more insights can be generated about product ranges.	
+
+**Source**: https://www.kaggle.com/c/otto-group-product-classification-challenge
+
+
+### •	Data Acquisition 
+The client provided data set consisting of 93 product features provided for more than 200,000 products. The data is available for download in .csv format.
+
+
+### •	Solution Approach
+* Perform exploratory data analysis to understand the data and its underlying metadata properties.
+* Make necessary adjustments to classify data for example, identify opportunities for compound keys to group data, change a continuous variable to categorical or vice versa, remove data anomalies and standardize the values.
+* Train the data set using various algorithms to identify a model that would be best suited to classify more accurate product categories in the data set.
+
+
+### •	Project Deliverables
+1. Code
+2. Project Report
+
